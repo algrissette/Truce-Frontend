@@ -6,7 +6,6 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "server": "nodemon --watch server --ext ts --exec npx ts-node server/app.ts",
     "lint": "eslint"
   },
   "dependencies": {
