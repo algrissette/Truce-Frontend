@@ -1,10 +1,10 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import StarCursor from "../components/StarCursor";
 import { Toaster } from "react-hot-toast";
 import NavBar from "@/components/navbar/navbar";
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,8 +33,12 @@ export default function RootLayout({
       >
         <Toaster position="top-right" />
         <StarCursor />
+        <NavBar font="sans" color="#ffffff" />
 
-        {children}
+        {/* Wrap the React children tree in Suspense */}
+        <Suspense fallback={<div className="h-[100dvh] flex items-center justify-center text-white">Loading...</div>}>
+          {children}
+        </Suspense>
       </body>
     </html>
   );
