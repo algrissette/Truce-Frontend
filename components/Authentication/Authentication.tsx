@@ -9,7 +9,7 @@ import { redirect } from "next/navigation";
 
 // Axios instance for localhost backend
 const api = axios.create({
-  baseURL: "http://localhost:4000", // your backend URL
+  baseURL: "https://truce-backend.railway.internal", // your backend URL
   withCredentials: true, // send/receive cookies
 });
 
@@ -150,7 +150,7 @@ export default function Authentication({ signUp }: { signUp: boolean }) {
     const [firstName, lastName] = fullName.split(" ");
 
     try {
-      const response = await axios.post("http://localhost:4000/users/create", {
+      const response = await axios.post("http://truce-backend.railway.internal/users/create", {
         firstName,
         lastName,
         email,
