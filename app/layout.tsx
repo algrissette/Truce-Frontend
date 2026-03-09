@@ -33,7 +33,6 @@ export default function RootLayout({
       >
         <Toaster position="top-right" />
         <StarCursor />
-        <NavBar font="sans" color="#ffffff" />
 
         {/* Wrap the React children tree in Suspense */}
         <Suspense fallback={<div className="h-[100dvh] flex items-center justify-center text-white">Loading...</div>}>
