@@ -263,7 +263,7 @@ export default function ItemPage() {
             toast.success("Added to wishlist! ❤️")
         } catch (error: any) {
             console.error("Error saving to wishlist:", error)
-            const errorMsg = error.response?.data?.message || "Failed to add to wishlist"
+            const errorMsg = error.response?.data?.message || "Must be Logged in to add to wishlist"
             toast.error(errorMsg)
         }
     }
