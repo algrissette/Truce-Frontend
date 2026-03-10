@@ -168,28 +168,34 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Word effect section - needs wrapper for sticky to work */}
+      {/* Word effect section */}
       <div className="relative">
         <div
           ref={container}
           className="
-          wordEffect
-          pl-[3%] sm:pl-[5%] lg:pl-[7%]
-          h-[150svh]
-          perspective-[1000px]
-          [transform-style:preserve-3d]
-          grid
-          grid-rows-[repeat(4,25dvh)]
-          grid-cols-[repeat(4,25dvw)]
-          sticky
-          relative
-          top-0
-          overflow-clip 
-          bg-black
-        "
+      wordEffect
+      pl-[3%] sm:pl-[5%] lg:pl-[7%]
+      perspective-[1000px]
+      [transform-style:preserve-3d]
+      sticky
+      top-0
+      overflow-clip
+      bg-black
+
+      /* Mobile: flex wrap */
+      flex flex-wrap items-center justify-center gap-2
+      h-[100svh]
+      
+      /* Desktop: grid */
+      lg:grid
+      lg:h-[150svh]
+      lg:grid-rows-[repeat(4,25dvh)]
+      lg:grid-cols-[repeat(4,25dvw)]
+    "
         >
           {wordList.map((word, key) => {
-            const fontSize = 50 + Math.random() * 30;
+            const desktopSize = 50 + Math.random() * 30;
+            const mobileSize = 18 + Math.random() * 14; // controlled mobile size
             const colors = ["#F594FE", "#FF3333", "#FFE735", "#4C9AFF"];
             const randomColor = colors[Math.floor(Math.random() * colors.length)];
 
@@ -198,10 +204,11 @@ export default function Home() {
                 key={key}
                 className={`[transform-style:preserve-3d] ${isVisibile ? "animate-zoom-in" : ""}`}
                 style={{
-                  fontSize: `${fontSize}px`,
+                  fontSize: `clamp(${mobileSize}px, 3vw, ${desktopSize}px)`,
                   fontFamily: "Edwardian Script ITC",
                   color: randomColor,
                   animationDelay: `${Math.random() * 2}s`,
+                  lineHeight: 1.1,
                 }}
               >
                 {word}
@@ -211,7 +218,7 @@ export default function Home() {
         </div>
 
         <div className="bg-black flex justify-center lg:justify-end relative h-20 py-40 sm:py-10 lg:py-20 px-4 sm:px-10 lg:px-20">
-          <h1 className=" bg-white font-edwardian text-4xl sm:text-6xl lg:text-8xl text-red-500 animate-pulse">
+          <h1 className="bg-white font-edwardian text-4xl sm:text-6xl lg:text-8xl text-red-500 animate-pulse">
             <a href="/What">Visit Shop</a>
           </h1>
         </div>
