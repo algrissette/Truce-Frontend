@@ -34,14 +34,14 @@ export default function Footer() {
           </a>
 
           <a
-            href="mailto:contact@truce.com"
+            href="mailto:truceofficiel@gmail.com"
             className="hover:text-green-400 transition"
             aria-label="Email"
           >
             <FaEnvelope />
           </a>
 
-          <a
+          {/*   <a
             href="https://tiktok.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -50,6 +50,7 @@ export default function Footer() {
           >
             <FaTiktok />
           </a>
+         */}
         </div>
 
         {/* Copyright */}

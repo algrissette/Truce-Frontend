@@ -322,9 +322,9 @@ export default function ItemPage() {
                 <NavBar font="sans" color="#ffffff" />
 
                 <div className="max-w-[1800px] mx-auto px-6 py-8">
-                    <div className="flex gap-8">
+                    <div className="flex flex-col md:flex-row place-items-center md:place-items-start gap-8">
                         {/* Images Section - 70% width, interactive zoom like WithJean */}
-                        <div className="w-[70%] grid grid-cols-2 gap-3">
+                        <div className=" w-full md:w-[70%] grid grid-cols-2 gap-3">
                             {allImages.map((item, index) => (
                                 <div
                                     key={index}
@@ -351,7 +351,7 @@ export default function ItemPage() {
                         </div>
 
                         {/* Product Info Section - 30% width, sticky */}
-                        <div className="w-[30%] space-y-6 sticky top-24 h-fit">
+                        <div className="w-full md:w-[30%] space-y-6 sticky top-24 h-fit">
                             {/* Title */}
                             <div className="space-y-3">
                                 <h1 className="text-3xl font-bold text-white tracking-tight">

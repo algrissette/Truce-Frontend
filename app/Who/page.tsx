@@ -6,7 +6,7 @@ import NavBar from "@/components/navbar/navbar";
 
 export default function Who() {
     const [currentPage, setCurrentPage] = useState(1);
-    const totalPages = 3;
+    const totalPages = 2;
 
     const nextPage = () => {
         if (currentPage < totalPages) setCurrentPage(currentPage + 1);
@@ -125,14 +125,14 @@ export default function Who() {
                         </div>
 
                         {/* PDF Viewer */}
-                        <div className="w-full bg-[#13131a] rounded-sm overflow-hidden relative group border border-white/10 shadow-2xl shadow-black/50" style={{ aspectRatio: '8.5/11' }}>
+                        <div
+                            className="w-full bg-[#13131a] rounded-sm overflow-hidden relative group border border-white/10 shadow-2xl shadow-black/50"
+                            style={{ aspectRatio: '8.5/11' }}
+                        >
                             <iframe
                                 key={`main-${currentPage}`}
                                 src={`/Media/sample-local-pdf.pdf#page=${currentPage}&toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
                                 className="w-full h-full border-0 bg-white"
-                                style={{ overflow: 'hidden' }}
-
-                                scrolling="no"
                                 title="Portfolio"
                             />
                         </div>
