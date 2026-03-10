@@ -5,6 +5,7 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import toast, { Toaster } from 'react-hot-toast';
 import { redirect } from "next/navigation";
+import { headers } from "next/headers";
 
 
 // Axios instance for localhost backend
@@ -40,7 +41,9 @@ export default function Authentication({ signUp }: { signUp: boolean }) {
     }
 
     try {
-      const response = await fetch("http://localhost:4000/users/signIn", {
+
+      api.post("/users/signIn")
+      const response = await fetch("https://truce-backend-production.up.railway.app/users/signIn", {
         method: "POST",
         credentials: "include",
         headers: {
