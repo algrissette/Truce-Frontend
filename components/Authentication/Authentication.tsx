@@ -5,7 +5,6 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import toast, { Toaster } from 'react-hot-toast';
 import { redirect } from "next/navigation";
-import { headers } from "next/headers";
 
 
 // Axios instance for localhost backend
