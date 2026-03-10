@@ -40,7 +40,7 @@ export default function Authentication({ signUp }: { signUp: boolean }) {
     }
 
     try {
-      const response = await fetch("http://localhost:4000/users/signIn", {
+      const response = await fetch("https://truce-backend-production.up.railway.app/users/signin", {
         method: "POST",
         credentials: "include",
         headers: {
