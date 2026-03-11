@@ -70,8 +70,7 @@ Express API
 ⬇  
 MySQL Database  
 ⬇  
-Strapi CMS
-
+Shopify + GraphQL
 ---
 
 ## Purpose
