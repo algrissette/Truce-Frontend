@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Trucé L'Officiel Website
 
-## Getting Started
+Full-stack website built for the streetwear brand **Trucé L'Officiel**.
 
-First, run the development server:
+🌐 Live Site: https://trucelofficiel.shop
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Overview
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project is a full-stack web platform built to showcase the fashion brand **Trucé L'Officiel**, created by fashion designer **Tracy Pendleton III**.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The site serves as a digital brand presence where visitors can explore collections, editorial content, and the creative direction behind the label.
 
-## Learn More
+The client requested a space themed website with an ease of use. 
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## About the Brand
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Trucé L'Officiel** is a streetwear brand founded by **Tracy Pendleton III**, a Summa Cum Laude graduate of **Howard University** with a BFA in Fashion Design.
 
-## Deploy on Vercel
+Tracy has experience in garment design, styling, and fashion production. His work has been featured in fashion shows, gallery exhibitions, and television productions including styling associated with *The Real Housewives of Potomac*.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The brand focuses on creative expression, streetwear aesthetics, and building opportunities for emerging designers.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Features
+
+- Product catalog and collection pages
+- CMS-managed editorial articles
+- Dynamic media and image uploads
+- Responsive layout for desktop and mobile
+- API-driven data fetching
+- Brand-focused UI design
+
+---
+
+## Tech Stack
+
+### Frontend
+- Next.js
+- React
+- TypeScript
+- Axios
+
+### Backend
+- Node.js
+- Express
+
+### Database
+- MySQL
+
+### CMS
+- Strapi
+
+### Deployment
+- Vercel (Frontend)
+- Railway (Backend)
+- Custom Domain
+
+---
+
+## Architecture
+
+Frontend (Next.js)  
+⬇  
+Express API  
+⬇  
+MySQL Database  
+⬇  
+Strapi CMS
+
+---
+
+## Purpose
+
+The platform was built to give **Trucé L'Officiel** a professional online presence while providing tools to manage content and product information.
+
+It also serves as a scalable foundation for future features such as expanded collections, editorial campaigns, and additional brand experiences.
+
+---
+
+## Future Improvements
+
+- Checkout and e-commerce integration
+- Expanded CMS content types
+- Admin tools for product management
+- Performance and SEO improvements
+
+---
+
+## Author
+
+Alan Grissette  
+Full Stack Developer
+
+GitHub: https://github.com/algrissette
