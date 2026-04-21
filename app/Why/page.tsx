@@ -38,7 +38,7 @@ export default function Why() {
                     {/* Title */}
                     <h1 className="text-7xl font-extralight text-white tracking-wider mb-20">
                         DONATE<br />
-                        <span className="border-b-2 border-white/80 pb-2 inline-block">HERE</span>
+
                     </h1>
 
                     {/* Organizations */}

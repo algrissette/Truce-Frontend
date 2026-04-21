@@ -7,7 +7,6 @@ import cookieParser from "cookie-parser";
 
 
 
-
 // Load environment variables
 dotenv.config();
 
@@ -54,8 +53,6 @@ app.use('/shopify', shopify)
 app.use("/cart", cart)
 
 
-// Optional: serve static files
-app.use(express.static(path.join(__dirname, 'public')));
 
 // 404 handler
 app.use((req: Request, res: Response) => {

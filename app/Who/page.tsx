@@ -66,7 +66,7 @@ export default function Who() {
 
                     <div className="w-full max-w-6xl mx-auto mb-8 lg:mb-12">
                         {/* Navigation Controls */}
-                        <div className="flex items-center justify-center gap-4 lg:gap-8 mb-6">
+                        <div className="hidden md:flex flex items-center justify-center gap-4 lg:gap-8 mb-6">
                             <button
                                 onClick={prevPage}
                                 disabled={currentPage === 1}
@@ -128,7 +128,7 @@ export default function Who() {
                         >
                             <iframe
                                 key={`main-${currentPage}`}
-                                src={`/Media/sample-local-pdf.pdf#page=${currentPage}&toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
+                                src={`/Media/sample-local-pdf.pdf#&toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
                                 className="w-full h-full border-0 bg-white"
                                 title="Portfolio"
                             />

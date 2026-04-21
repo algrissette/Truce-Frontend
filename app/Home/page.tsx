@@ -29,7 +29,7 @@ export default function Home() {
     "Frame",       // 9
     "Spark",       // 10
     "Pulse",       // 11
-    "Truc",        // 12 - middle word
+    "Truce",        // 12 - middle word
     "Loom",        // 13
     "Wander",      // 14
     "Twist",       // 15
@@ -37,10 +37,7 @@ export default function Home() {
     "Peace",       // 17
     "Impress",     // 18
     "Unisex",      // 19
-    "Martyr",      // 20
-    "Take",        // 21
-    "Plan",        // 22
-    "Alleviate",   // 23
+
     // 24
   ];
 
@@ -113,6 +110,7 @@ export default function Home() {
             Trucé L'Officiel
           </h1>
 
+
           {/* Animated particles */}
           <div className="relative h-[30px] w-full max-w-[600px] mx-auto flex items-center justify-around gap-2">
             <div className="w-2 h-2 sm:w-3 sm:h-3 bg-[#4C9AFF] rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
@@ -121,6 +119,10 @@ export default function Home() {
             <div className="w-2 h-2 sm:w-3 sm:h-3 bg-[#F594FE] rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
             <div className="w-2 h-2 sm:w-3 sm:h-3 bg-[#4C9AFF] rounded-full animate-bounce" style={{ animationDelay: '400ms' }}></div>
             <div className="w-2 h-2 sm:w-3 sm:h-3 bg-[#FF3333] rounded-full animate-bounce" style={{ animationDelay: '500ms' }}></div>
+          </div>
+
+          <div className="text-5xl sm:text-xl lg:text-2xl text-white drop-shadow-2xl text-center  my-10 ">
+            <a className="px-10 border-2 border-white" href="/What">Visit Shop</a>
           </div>
         </div>
 
@@ -141,6 +143,7 @@ export default function Home() {
 
       {/* Image reveal section - HIDDEN ON SMALL AND MEDIUM SCREENS */}
       <div className="imageContainer mx-[8%] mt-0 pt-2 h-[100dvh] w-[92%] hidden lg:block relative">
+
         {/* Base layer images */}
         <div className="flex justify-between items-start">
           <div className="aspect-square w-[40%] relative overflow-hidden border-6 border-black">
@@ -165,7 +168,14 @@ export default function Home() {
           </div>
 
           <div className="w-2 h-210 relative bottom-3 rounded-full bg-white shadow-lg z-1"></div>
+
         </div>
+        <div className="absolute bottom-10 left-[-100px] w-full flex justify-center">
+          <img src="/Media/Images/Home/Logo.jpg" alt="Logo" className="w-[200px]" />
+        </div>
+
+
+
       </div>
 
       {/* Word effect section */}
@@ -174,7 +184,7 @@ export default function Home() {
           ref={container}
           className="
       wordEffect
-      pl-[3%] sm:pl-[5%] lg:pl-[7%]
+      pl-[15%] sm:pl-[15%] lg:pl-[15%]
       perspective-[1000px]
       [transform-style:preserve-3d]
       sticky
@@ -183,8 +193,7 @@ export default function Home() {
       bg-black
 
       /* Mobile: flex wrap */
-      flex flex-wrap items-center justify-center gap-2
-      h-[100svh]
+     items-center justify-center gap-5  grid grid-cols-2 pt-10
       
       /* Desktop: grid */
       lg:grid
@@ -194,8 +203,8 @@ export default function Home() {
     "
         >
           {wordList.map((word, key) => {
-            const desktopSize = 50 + Math.random() * 30;
-            const mobileSize = 18 + Math.random() * 14; // controlled mobile size
+            const desktopSize = 75 + Math.random() * 30;
+            const mobileSize = 25 + Math.random() * 14; // controlled mobile size
             const colors = ["#F594FE", "#FF3333", "#FFE735", "#4C9AFF"];
             const randomColor = colors[Math.floor(Math.random() * colors.length)];
 
@@ -204,7 +213,7 @@ export default function Home() {
                 key={key}
                 className={`[transform-style:preserve-3d] ${isVisibile ? "animate-zoom-in" : ""}`}
                 style={{
-                  fontSize: `clamp(${mobileSize}px, 3vw, ${desktopSize}px)`,
+                  fontSize: `clamp(${mobileSize}px, 50px, ${desktopSize}px)`,
                   fontFamily: "Edwardian Script ITC",
                   color: randomColor,
                   animationDelay: `${Math.random() * 2}s`,
