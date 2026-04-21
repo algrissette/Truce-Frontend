@@ -26,15 +26,10 @@ export default function Why() {
         <div className="min-h-screen flex flex-col bg-[#0a0a0f]">
             <NavBar font="sans" color="#ffffff" />
 
-            {/* Subtle space dots background */}
-            <div className="fixed inset-0 opacity-10 pointer-events-none" style={{
-                backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
-                backgroundSize: '30px 30px'
-            }}></div>
 
-            <div className="flex-1 md:flex relative z-10">
+            <div className="flex-1  md:flex relative z-10">
                 {/* Left Side - Donation Info */}
-                <div className="w-full md:w-1/2 px-20 py-24 flex flex-col">
+                <div className="w-full md:w-1/2  py-24 flex flex-col">
                     {/* Title */}
                     <h1 className="text-7xl font-extralight text-white tracking-wider mb-20">
                         DONATE<br />
