@@ -154,7 +154,7 @@ export default function Home() {
             <img className="w-full h-full object-cover" src="/Media/Images/Home/HomeImage2.jpg" alt="Home" />
           </div>
 
-          <div ref={animationBar} className="w-1 h-[20vh] xs:h-[25vh] sm:h-[40vh] md:h-[35vh] lg:h-[45vh] xl:h-[60vh] 2xl:h-[1000px] relative bottom-20 rounded-full bg-black border-1 border-white shadow-lg z-1"></div>
+          <div ref={animationBar} className="w-1 h-[20vh] xs:h-[25vh] sm:h-[40vh] md:h-[35vh] lg:h-[60vh] xl:h-[80vh] 2xl:h-[1000px] relative bottom-20 rounded-full bg-black border-1 border-white shadow-lg z-1"></div>
         </div>
 
         {/* Overlay layer images (reveal effect) */}

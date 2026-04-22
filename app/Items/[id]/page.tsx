@@ -154,12 +154,10 @@ export default function ItemPage() {
         const images = product.media.nodes
             .map(v => {
                 const url = v.image?.url;
-                console.log("playing with this url", url)
                 if (!url) return null;
 
                 const match = url.match(/\/files\/([^_\/]+)_/);
                 const name = match?.[1]?.toLowerCase();
-                console.log("match", match)
 
                 if (!color) return variant.image?.url || null;
                 return name?.toLocaleLowerCase() === color ? url : null;
