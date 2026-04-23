@@ -34,7 +34,7 @@ export const logout = (req: Request, res: Response) => {
     res.clearCookie("truceCookieName", {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
-      sameSite: "strict",
+      sameSite: "none",
       path: "/",
     });
 
@@ -42,7 +42,7 @@ export const logout = (req: Request, res: Response) => {
     res.clearCookie("userId", {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
-      sameSite: "strict",
+      sameSite: "none",
       path: "/",
     });
 

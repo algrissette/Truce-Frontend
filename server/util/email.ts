@@ -5,24 +5,24 @@ dotenv.config();
 
 // Create reusable transporter
 const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASSWORD,
-    },
+  service: 'gmail',
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASSWORD,
+  },
 });
 
 export const sendPasswordResetEmail = async (
-    recipientEmail: string,
-    resetToken: string
+  recipientEmail: string,
+  resetToken: string
 ) => {
-    const resetLink = `${process.env.FRONTEND_URL}/reset-password?token=${resetToken}`;
+  const resetLink = `${process.env.FRONTEND_URL}/reset-password?token=${resetToken}`;
 
-    const mailOptions = {
-        from: `"Truce" <${process.env.EMAIL_USER}>`,
-        to: recipientEmail,
-        subject: 'Password Reset Request',
-        html: `
+  const mailOptions = {
+    from: `"Truce" <${process.env.EMAIL_USER}>`,
+    to: recipientEmail,
+    subject: 'Password Reset Request',
+    html: `
       <!DOCTYPE html>
       <html>
         <head>
@@ -70,13 +70,13 @@ export const sendPasswordResetEmail = async (
         </body>
       </html>
     `,
-    };
+  };
 
-    try {
-        await transporter.sendMail(mailOptions);
-        console.log(`Password reset email sent to ${recipientEmail}`);
-    } catch (error) {
-        console.error('Error sending email:', error);
-        throw new Error('Failed to send email');
-    }
+  try {
+    await transporter.sendMail(mailOptions);
+    console.log(`Password reset email sent to ${recipientEmail}`);
+  } catch (error) {
+    console.error('Error sending email:', error);
+    throw new Error('Failed to send email');
+  }
 };

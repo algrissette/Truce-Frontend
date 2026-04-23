@@ -1,16 +1,22 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "CommonJS",
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "ignoreDeprecations": "5.0",
     "rootDir": ".",
-    "outDir": "../dist",
+    "outDir": "./dist",
     "strict": true,
     "esModuleInterop": true,
-    "moduleResolution": "node",
     "resolveJsonModule": true,
     "allowJs": true,
     "skipLibCheck": true
   },
-  "include": ["**/*"],
-  "exclude": ["node_modules", ".next"]
+  "include": [
+    "**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    ".next"
+  ]
 }

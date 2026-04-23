@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getUserById, getAllUsers, createUser, signIn, getSavedItems, saveItemInDatabase, deleteSavedItem, updatePassword, sendPasswordResetLink, resetPassword } from '../controllers/users';
+import { getUserById, getAllUsers, createUser, signIn, getSavedItems, saveItemInDatabase, deleteSavedItem, updatePassword, sendPasswordResetLink, resetPassword } from '../controllers/users.js';
 
 const router = Router()
 // GET all users (static path first)

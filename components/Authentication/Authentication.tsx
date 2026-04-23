@@ -5,13 +5,10 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import toast, { Toaster } from 'react-hot-toast';
 import { redirect } from "next/navigation";
+import { api } from "@/app/util/apicCall";
 
 
 // Axios instance for localhost backend
-const api = axios.create({
-  baseURL: "https://truce-backend-production.up.railway.app", // your backend URL
-  withCredentials: true, // send/receive cookies
-});
 
 export default function Authentication({ signUp }: { signUp: boolean }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -40,41 +37,31 @@ export default function Authentication({ signUp }: { signUp: boolean }) {
     }
 
     try {
-
-      api.post("/users/signIn")
-      const response = await fetch("https://truce-backend-production.up.railway.app/users/signIn", {
-        method: "POST",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
+      const response = await api.post("/users/signIn", {
+        email,
+        password,
       });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        console.error("Error signing in user:", errorData);
-        setErrorNotice(errorData.message || "Invalid email or password");
-        toast.error("Login failed. Please check your credentials.");
-        setLoading(false);
-        return;
-      }
+      const data = response.data;
 
-      const data = await response.json();
       console.log("User signed In:", data);
 
       toast.success("Welcome back! Logging you in...");
 
-      // Redirect after short delay
       setTimeout(() => {
-
-        window.location.href = '/';
+        window.location.href = "/";
       }, 1500);
 
     } catch (error: any) {
-      console.error("Error signing in user:", error.message);
-      setErrorNotice("Failed to sign in. Please try again.");
-      toast.error("Connection error. Please try again.");
+      console.error("Error signing in user:", error);
+
+      const message =
+        error?.response?.data?.message ||
+        "Invalid email or password";
+
+      setErrorNotice(message);
+      toast.error("Login failed. Please check your credentials.");
+    } finally {
       setLoading(false);
     }
   };
@@ -152,7 +139,7 @@ export default function Authentication({ signUp }: { signUp: boolean }) {
     const [firstName, lastName] = fullName.split(" ");
 
     try {
-      const response = await axios.post("https://truce-backend-production.up.railway.app/users/create", {
+      const response = await api.post("/users/create", {
         firstName,
         lastName,
         email,
@@ -160,7 +147,6 @@ export default function Authentication({ signUp }: { signUp: boolean }) {
         dob,
         sud,
       });
-
       console.log("User created:", response.data);
       toast.success("Account created successfully! Welcome to Trucé");
 

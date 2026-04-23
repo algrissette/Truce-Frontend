@@ -1,11 +1,11 @@
 import { Request, Response, NextFunction, response } from 'express';
-import { IUser } from '../models/users';
-import db from '../util/database';
+import { IUser } from '../models/users.js';
+import db from '../util/database.js';
 import { ResultSetHeader, RowDataPacket } from 'mysql2';
 import dotenv from 'dotenv'
 import bcrypt from 'bcrypt';
 import jwt from "jsonwebtoken";
-import { sendPasswordResetEmail } from '../util/email';
+import { sendPasswordResetEmail } from '../util/email.js';
 const jwtPassword = process.env.JWTSECRETKEY
 
 
@@ -300,6 +300,10 @@ export const getUserById = async (req: Request<{ id: string }>, res: Response, n
 
   if (isNaN(id)) {
     return res.status(400).json({ error: 'Invalid user ID' });
+  }
+  if (id == undefined) {
+    return res.status(400).json({ error: 'Invalid user ID' });
+
   }
 
   try {

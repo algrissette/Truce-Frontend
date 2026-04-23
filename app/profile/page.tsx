@@ -24,7 +24,7 @@ export default function Profile() {
     useEffect(() => {
         const getUser = async () => {
             try {
-                const res = await api.post("users/getUser", {});
+                const res = await api.post("/users/getUser");
                 setUser(res.data);
             } catch (err) {
                 console.error(err);
